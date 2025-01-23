@@ -60,6 +60,11 @@
       "keywords": "IMS, Unauthorized, hvduc.com"
     }
   },
+  "common": {
+    "item_unit": "item",
+    "items_unit": "items",
+    "not_found_content": "No data found"
+  },
   "time": {
     "default": "now",
     "minute_ago": {
@@ -168,10 +173,17 @@
     "search": "Search",
     "filter": "Filter",
     "name": "Name",
+    "name_placeholder": "Enter role name (e.g., Admin, User)",
+    "name_subtext": "Roles may include SuperAdmin, Admin, User, and more. Choose wisely!",
     "description": "Description",
+    "description_placeholder": "Enter role description...",
+    "description_subtext": "Please provide clear and concise descriptions of the rules to ensure all users understand.",
     "created_at": "Created At",
     "updated_at": "Updated At",
-    "actions": "Actions"
+    "actions": "Actions",
+    "items_selected": "{count} items selected",
+    "save": "Save",
+    "new_role": "Add New User Role"
   },
   "permission": {
     "title": "Permissions Management",
@@ -187,6 +199,11 @@
     "created_at": "Created At",
     "updated_at": "Updated At",
     "actions": "Actions",
-    "items_selected": "{count} items selected"
+    "items_selected": "{count} items selected",
+    "transfer": {
+      "title": "Assign permissions to this role",
+      "description": "Assign specific permissions to ensure users have the appropriate level of access for their responsibilities.",
+      "search_placeholder": "Search permission..."
+    }
   }
 }

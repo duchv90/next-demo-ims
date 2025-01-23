@@ -1,3 +1,5 @@
+import type { GetProp, TableColumnsType, TransferProps } from 'antd';
+
 export interface Permission {
   id: string;
   name: string;
@@ -9,9 +11,9 @@ export interface Permission {
 export interface PermissionInfo {
   id: string;
   name: string;
-  description: string;
-  createdAt: string;
-  updatedAt: string;
+  description?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface PermissionDataTable extends PermissionInfo {
@@ -30,4 +32,11 @@ export interface PaginatedPermissions {
   total: number;
   page: number;
   pageSize: number;
+}
+
+export interface PermissionsTransferProps
+  extends TransferProps<GetProp<TransferProps, 'dataSource'>[number]> {
+  dataSource: PermissionDataTable[];
+  leftColumns: TableColumnsType<PermissionDataTable>;
+  rightColumns: TableColumnsType<PermissionDataTable>;
 }

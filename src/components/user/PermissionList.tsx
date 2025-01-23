@@ -132,7 +132,7 @@ export default function PermissionList({
     <>
       <div className="mb-5 flex items-end justify-between py-3">
         <div className="flex flex-col">
-          <h2 className="text-3xl font-bold">{t('permission.title')}</h2>
+          <h1 className="text-3xl font-bold">{t('permission.title')}</h1>
           <p className="mt-1 text-body-secondary">
             {t('permission.page_description')}
           </p>

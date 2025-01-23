@@ -60,6 +60,11 @@
       "keywords": "IMS, Unauthorized, hvduc.com"
     }
   },
+  "common": {
+    "item_unit": "mục",
+    "items_unit": "mục",
+    "not_found_content": "Không tìm thấy dữ liệu"
+  },
   "time": {
     "default": "vừa xong",
     "minute_ago": {
@@ -168,10 +173,17 @@
     "search": "Tìm kiếm",
     "filter": "Lọc",
     "name": "Tên",
+    "name_placeholder": "Nhập tên vai trò (ví dụ: Admin, User)",
+    "name_subtext": "Vai trò có thể bao gồm SuperAdmin, Admin, User và nhiều hơn nữa. Hãy chọn một cách khôn ngoan!",
     "description": "Mô tả",
+    "description_placeholder": "Nhập mô tả vai trò...",
+    "description_subtext": "Mô tả chi tiết về vai trò này.",
     "created_at": "Ngày tạo",
     "updated_at": "Ngày cập nhật",
-    "actions": "Thao tác"
+    "actions": "Thao tác",
+    "items_selected": "{count} mục đã chọn",
+    "save": "Lưu",
+    "new_role": "Thêm mới vai trò"
   },
   "permission": {
     "title": "Quyền",
@@ -187,6 +199,11 @@
     "created_at": "Ngày tạo",
     "updated_at": "Ngày cập nhật",
     "actions": "Thao tác",
-    "items_selected": "{count} mục đã chọn"
+    "items_selected": "{count} mục đã chọn",
+    "transfer": {
+      "title": "Gán quyền cho vai trò",
+      "description": "Chọn quyền mà bạn muốn gán cho vai trò này.",
+      "search_placeholder": "Tìm kiếm quyền"
+    }
   }
 }

@@ -11,5 +11,6 @@ export type MenuItem = {
     en: string;
   };
   disabled: boolean;
+  pathnames?: string[];
   children?: MenuItem[];
 };

@@ -176,7 +176,7 @@ export default function UserList({
     <>
       <div className="mb-5 flex items-end justify-between py-3">
         <div className="flex flex-col">
-          <h2 className="text-3xl font-bold">{t('user.title')}</h2>
+          <h1 className="text-3xl font-bold">{t('user.title')}</h1>
           <p className="mt-1 text-body-secondary">
             {t('user.page_description')}
           </p>

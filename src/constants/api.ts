@@ -1,5 +1,3 @@
-import { GET } from '@/app/api/notifications/route';
-
 export const API_URL: string = process.env.API_URL || '';
 
 export const API = {

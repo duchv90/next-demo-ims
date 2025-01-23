@@ -3,7 +3,7 @@ import { UseFetchResult } from '@/types/api';
 
 const useFetch = <T>(url: string): UseFetchResult<T> => {
   const [data, setData] = useState<T | null>(null);
-  const [loading, setLoading] =  useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -16,7 +16,8 @@ const useFetch = <T>(url: string): UseFetchResult<T> => {
         }
 
         const responseJson = await response.json();
-        const result: T = responseJson.data;
+        const result: T =
+          'data' in responseJson ? responseJson.data : responseJson;
         setData(result);
       } catch (error) {
         if (error instanceof Error) {

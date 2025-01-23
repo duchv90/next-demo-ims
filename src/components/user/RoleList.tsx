@@ -10,6 +10,7 @@ import { formatDateTime } from '@/utils/stringHelpers';
 import { getRoles } from '@/services/api';
 import { useRouter } from '@/i18n/routing';
 import { Urls } from '@/constants';
+import SearchDataTable from '@/components/ui/SearchDataTable';
 
 export default function RoleList({
   page,
@@ -127,7 +128,7 @@ export default function RoleList({
     <>
       <div className="mb-5 flex items-end justify-between py-3">
         <div className="flex flex-col">
-          <h2 className="text-3xl font-bold">{t('role.title')}</h2>
+          <h1 className="text-3xl font-bold">{t('role.title')}</h1>
           <p className="mt-1 text-body-secondary">
             {t('role.page_description')}
           </p>
@@ -144,6 +145,24 @@ export default function RoleList({
         </div>
       </div>
       <div className="rounded-sm bg-white p-3 shadow-dashboard">
+        <div className="flex justify-between p-3">
+          <div className="flex items-center gap-2 whitespace-nowrap font-medium">
+            {selectedRowKeys.length > 0 && (
+              <>
+                <span className="pr-3">
+                  {t('role.items_selected', {
+                    count: selectedRowKeys.length,
+                  })}
+                </span>
+                <Button className="min-w-20" danger size="small">
+                  {t('role.delete')}
+                </Button>
+                <span className="w-8"></span>
+              </>
+            )}
+          </div>
+          <SearchDataTable />
+        </div>
         <Table<RoleDataTable>
           loading={loading}
           columns={columns}

@@ -32,6 +32,7 @@ export const MAIN_MENU: MenuItem[] = [
   {
     id: '7c14adbf-e2b3-414c-ae36-af3abea684d4',
     href: Urls.dashboard,
+    pathnames: [Urls.dashboard],
     icon: 'HomeOutlined',
     label: {
       vi: 'Tổng quan',
@@ -42,6 +43,7 @@ export const MAIN_MENU: MenuItem[] = [
   {
     id: '53d5a7e0-21b8-4970-a337-5262e1e923a2',
     href: Urls.sales,
+    pathnames: [Urls.sales],
     icon: 'HeartOutlined',
     label: {
       vi: 'Thống kê sales',
@@ -61,6 +63,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: '8870c0c7-2ed2-440e-9e8c-31e6df3e3146',
         href: Urls.users,
+        pathnames: [Urls.users],
         icon: '',
         label: {
           vi: 'Người dùng',
@@ -71,6 +74,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: 'b5ad7444-8fbc-48ec-9e5e-8b99306dbd3f',
         href: Urls.roles,
+        pathnames: [Urls.roles, Urls.newRoles],
         icon: '',
         label: {
           vi: 'Vai trò',
@@ -81,6 +85,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: 'fc7bc517-8e7f-4698-86ef-a641f17fc4d2',
         href: Urls.permissions,
+        pathnames: [Urls.permissions],
         icon: '',
         label: {
           vi: 'Phân quyền',
@@ -102,6 +107,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: '730140cb-70a1-43f0-bbef-59ad08e661b7',
         href: Urls.emailSettings,
+        pathnames: [Urls.emailSettings],
         icon: '',
         label: {
           vi: 'Email',
@@ -112,6 +118,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: '59395b00-e260-4ad7-995f-8671a00664ec',
         href: Urls.logSettings,
+        pathnames: [Urls.logSettings],
         icon: '',
         label: {
           vi: 'Logs',
@@ -122,6 +129,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: '15de0bf4-aeea-4497-a173-342a32549e39',
         href: Urls.preferences,
+        pathnames: [Urls.preferences],
         icon: '',
         label: {
           vi: 'Cấu hình',

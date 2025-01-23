@@ -20,7 +20,7 @@ export default function MainMenu() {
     parents: string[],
   ): { activeItem: MenuItem; parents: string[] } | null => {
     for (const item of menu) {
-      if (item.href === activeHref) {
+      if (item.pathnames && item.pathnames.includes(activeHref)) {
         return { activeItem: item, parents };
       }
 
