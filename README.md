@@ -41,9 +41,7 @@ $ cd next-demo-ims
 
 ```bash
 $ npm install
-```
 # or
-```bash
 $ yarn install
 ```
 
