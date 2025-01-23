@@ -85,7 +85,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: 'fc7bc517-8e7f-4698-86ef-a641f17fc4d2',
         href: Urls.permissions,
-        pathnames: [Urls.permissions],
+        pathnames: [Urls.permissions, Urls.newPermissions],
         icon: '',
         label: {
           vi: 'Phân quyền',

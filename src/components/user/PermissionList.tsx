@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Button, GetProp, Table, TableColumnsType, TableProps } from 'antd';
-import { PlusOutlined, SyncOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 import { TableRowSelection } from 'antd/es/table/interface';
 import {
   PaginatedPermissions,
@@ -13,7 +13,8 @@ import {
 import { formatDateTime } from '@/utils/stringHelpers';
 import SearchDataTable from '@/components/ui/SearchDataTable';
 import { getPermissions } from '@/services/api';
-import { DEFAULT_PAGE_SIZE } from '@/constants';
+import { useRouter } from '@/i18n/routing';
+import { DEFAULT_PAGE_SIZE, Urls } from '@/constants';
 
 export default function PermissionList({
   page,
@@ -32,6 +33,7 @@ export default function PermissionList({
     page: isNaN(currentPage) ? 1 : currentPage,
     pageSize: isNaN(currentPageSize) ? DEFAULT_PAGE_SIZE : currentPageSize,
   };
+  const router = useRouter();
 
   const [tableParams, setTableParams] = useState<
     PermissionTableParams<
@@ -139,10 +141,10 @@ export default function PermissionList({
         </div>
         <div className="flex items-center">
           <Button
-            className=""
             type="primary"
-            icon={loading ? <SyncOutlined spin /> : <PlusOutlined />}
+            icon={<PlusOutlined />}
             loading={loading}
+            onClick={() => router.push(Urls.newPermissions)}
           >
             {t('permission.create')}
           </Button>

@@ -10,6 +10,7 @@ export const Urls = {
   roles: '/users/roles',
   newRoles: '/users/roles/new',
   permissions: '/users/permissions',
+  newPermissions: '/users/permissions/new',
   emailSettings: '/settings/email',
   logSettings: '/settings/logs',
   preferences: '/settings/preferences',
