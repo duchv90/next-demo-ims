@@ -1,0 +1,192 @@
+{
+  "general": {
+    "title": "IMS",
+    "about": "Go to the about page",
+    "loading": "Loading...",
+    "locales": {
+      "vi": "Vietnamese",
+      "en": "English (US)"
+    }
+  },
+  "seo": {
+    "login": {
+      "title": "Login | HVDUC",
+      "description": "Login page",
+      "keywords": "Login, Account, hvduc.com"
+    },
+    "dashboard": {
+      "title": "Dashboard | HVDUC",
+      "description": "Dashboard description",
+      "keywords": "IMS, Dashboard, hvduc.com"
+    },
+    "sales": {
+      "title": "Sales page | HVDUC",
+      "description": "Sales page description",
+      "keywords": "IMS, Sales, hvduc.com"
+    },
+    "users": {
+      "title": "Users | HVDUC",
+      "description": "Users management",
+      "keywords": "IMS, Users, hvduc.com"
+    },
+    "roles": {
+      "title": "User roles | HVDUC",
+      "description": "User roles",
+      "keywords": "IMS, User roles, hvduc.com"
+    },
+    "permissions": {
+      "title": "User permisions | HVDUC",
+      "description": "User permisions",
+      "keywords": "IMS, User permisions, hvduc.com"
+    },
+    "settings_email": {
+      "title": "Email configuration | HVDUC",
+      "description": "Email configuration",
+      "keywords": "IMS, email, hvduc.com"
+    },
+    "settings_logs": {
+      "title": "Logs system | HVDUC",
+      "description": "Logs system",
+      "keywords": "IMS, logs, hvduc.com"
+    },
+    "settings_preferences": {
+      "title": "Preferences | HVDUC",
+      "description": "Preferences page description",
+      "keywords": "IMS, preferences, hvduc.com"
+    },
+    "unauthorized": {
+      "title": "Unauthorized | HVDUC",
+      "description": "Unauthorized",
+      "keywords": "IMS, Unauthorized, hvduc.com"
+    }
+  },
+  "time": {
+    "default": "now",
+    "minute_ago": {
+      "one": "{minute} minute ago",
+      "more": "{minute} minutes ago"
+    },
+    "hour_ago": {
+      "one": "{hour} hour ago",
+      "more": "{hour} hours ago"
+    },
+    "day_ago": {
+      "one": "{day} day ago",
+      "more": "{day} days ago"
+    }
+  },
+  "header": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "support": "Support",
+    "logout": "Log Out"
+  },
+  "sidebar": {
+    "button_label": "Toggle sidebar"
+  },
+  "homepage": {
+    "title": "Homepage",
+    "description": ""
+  },
+  "login": {
+    "title": "Login",
+    "description": "Login page",
+    "keywords": "Login, Account",
+    "username": {
+      "label": "Email",
+      "placeholder": "email@gmail.com",
+      "required_message": "Please input your email!"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Password",
+      "required_message": "Please input your password!"
+    },
+    "submit": "Sign In",
+    "oauth": {
+      "summary": "OR Continue With",
+      "facebook": "Login with Facebook",
+      "google": "Login with Google",
+      "github": "Login with Github"
+    },
+    "contact_message": "If you encounter any issues, please <contact>contact us</contact> for assistance..",
+    "messages": {
+      "USER_NOT_FOUND": "Account does not exist. Please check your Email and password.",
+      "WRONG_PASSWORD": "The password you entered is incorrect. Please check again.",
+      "USER_NOT_ACTIVE": "Account not activated. Please contact support team.",
+      "SERVER_ERROR": "Unable to connect to server. Please try again later.",
+      "INVALID_REQUEST": "Invalid request."
+    }
+  },
+  "logout": {
+    "error_message": "An error occurred while trying to log you out. Please try again."
+  },
+  "notification": {
+    "title": "Notification",
+    "feature_coming_soon": "We're excited to inform you that this feature is currently under development. Stay tuned for updates!",
+    "unread": "{ count } Unread",
+    "view_all": "View all notifications"
+  },
+  "dashboard": {
+    "vs": "VS",
+    "view_more": "View More",
+    "delete": "Delete"
+  },
+  "unauthorized": {
+    "title": "Access Denied",
+    "description": "You are not authorized to access this page. Please contact the administrator for further assistance."
+  },
+  "user": {
+    "title": "User Management",
+    "page_description": "(Only for Admin and SuperAdmin)",
+    "create": "Create User",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "avatar": "Avatar",
+    "username": "Username",
+    "email": "Email",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "full_name": "Full Name",
+    "roles": "Roles",
+    "status": {
+      "label": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "locked": "Locked"
+    },
+    "actions": "Actions"
+  },
+  "role": {
+    "title": "Roles Management",
+    "page_description": "(Only for Admin and SuperAdmin)",
+    "create": "Create Role",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "name": "Name",
+    "description": "Description",
+    "created_at": "Created At",
+    "updated_at": "Updated At",
+    "actions": "Actions"
+  },
+  "permission": {
+    "title": "Permissions Management",
+    "page_description": "(Only for Admin and SuperAdmin)",
+    "create": "Create Permission",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "search_placeholder": "Search permission...",
+    "filter": "Filter",
+    "name": "Name",
+    "description": "Description",
+    "created_at": "Created At",
+    "updated_at": "Updated At",
+    "actions": "Actions",
+    "items_selected": "{count} items selected"
+  }
+}

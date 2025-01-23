@@ -1,0 +1,192 @@
+{
+  "general": {
+    "title": "IMS",
+    "about": "Go to the about page",
+    "loading": "Đang xử lý...",
+    "locales": {
+      "vi": "Tiếng Việt",
+      "en": "Tiếng Anh"
+    }
+  },
+  "seo": {
+    "login": {
+      "title": "Đăng nhập | HVDUC",
+      "description": "Trang đăng nhập",
+      "keywords": "Login, Account, hvduc.com"
+    },
+    "dashboard": {
+      "title": "Tổng quan | HVDUC",
+      "description": "Tổng quan hệ thống",
+      "keywords": "IMS, Dashboard, hvduc.com"
+    },
+    "sales": {
+      "title": "Thống kê Sales | HVDUC",
+      "description": "Thống kê Sales",
+      "keywords": "IMS, Sales, hvduc.com"
+    },
+    "users": {
+      "title": "Quản lý người dùng | HVDUC",
+      "description": "Quản lý người dùng",
+      "keywords": "IMS, Users, hvduc.com"
+    },
+    "roles": {
+      "title": "Vai trò của người dùng | HVDUC",
+      "description": "Vai trò của người dùng",
+      "keywords": "IMS, Roles, hvduc.com"
+    },
+    "permissions": {
+      "title": "Quyền của người dùng | HVDUC",
+      "description": "Quyền của người dùng",
+      "keywords": "IMS, Permisions, hvduc.com"
+    },
+    "settings_email": {
+      "title": "Thiết lập email | HVDUC",
+      "description": "Thiết lập email",
+      "keywords": "IMS, email, hvduc.com"
+    },
+    "settings_logs": {
+      "title": "Nhật ký hoạt động | HVDUC",
+      "description": "Nhật ký hoạt động",
+      "keywords": "IMS, logs, hvduc.com"
+    },
+    "settings_preferences": {
+      "title": "Cấu hình | HVDUC",
+      "description": "Cấu hình",
+      "keywords": "IMS, preferences, hvduc.com"
+    },
+    "unauthorized": {
+      "title": "Unauthorized | HVDUC",
+      "description": "Unauthorized",
+      "keywords": "IMS, Unauthorized, hvduc.com"
+    }
+  },
+  "time": {
+    "default": "vừa xong",
+    "minute_ago": {
+      "one": "{minute} phút trước",
+      "more": "{minute} phút trước"
+    },
+    "hour_ago": {
+      "one": "{hour} giờ trước",
+      "more": "{hour} giờ trước"
+    },
+    "day_ago": {
+      "one": "{day} ngày trước",
+      "more": "{day} ngày trước"
+    }
+  },
+  "header": {
+    "profile": "Hồ sơ cá nhân",
+    "settings": "Thiết lập hệ thống",
+    "support": "Hỗ trợ",
+    "logout": "Đăng xuất"
+  },
+  "sidebar": {
+    "button_label": "Mở rộng / Thu gọn"
+  },
+  "homepage": {
+    "title": "Trang chủ",
+    "description": ""
+  },
+  "login": {
+    "title": "Đăng nhập",
+    "description": "Trang đăng nhập",
+    "keywords": "Login, Account",
+    "username": {
+      "label": "Email",
+      "placeholder": "email@gmail.com",
+      "required_message": "Vui lòng nhập email của bạn!"
+    },
+    "password": {
+      "label": "Mật khẩu",
+      "placeholder": "Mật khẩu",
+      "required_message": "Vui lòng nhập mật khẩu của bạn!"
+    },
+    "submit": "Đăng nhập",
+    "oauth": {
+      "summary": "hoặc đăng nhập với",
+      "facebook": "Đăng nhập với Facebook",
+      "google": "Đăng nhập với Google",
+      "github": "Đăng nhập với Github"
+    },
+    "contact_message": "Nếu bạn gặp bất kỳ vấn đề nào, vui lòng <contact>liên hệ</contact> với chúng tôi để được hỗ trợ.",
+    "messages": {
+      "USER_NOT_FOUND": "Người dùng không tồn tại. Vui lòng kiểm tra lại Email và mật khẩu.",
+      "WRONG_PASSWORD": "Mật khẩu bạn nhập không chính xác. Vui lòng kiểm tra lại.",
+      "USER_NOT_ACTIVE": "Tài khoản chưa được kích hoạt. Vui lòng liên hệ với bộ phận hỗ trợ.",
+      "SERVER_ERROR": "Không thể kết nối đến máy chủ. Vui lòng thử lại sau.",
+      "INVALID_REQUEST": "Yêu cầu của bạn chưa hợp lệ."
+    }
+  },
+  "logout": {
+    "error_message": "Có lỗi xảy ra khi đăng xuất. Vui lòng thử lại."
+  },
+  "notification": {
+    "title": "Thông báo",
+    "feature_coming_soon": "Tính năng này hiện đang được phát triển. Hãy theo dõi để cập nhật!",
+    "unread": "{ count } Chưa đọc",
+    "view_all": "Xem thêm thông báo"
+  },
+  "dashboard": {
+    "vs": "VS",
+    "view_more": "Xem thêm",
+    "delete": "Xóa bỏ"
+  },
+  "unauthorized": {
+    "title": "Truy cập bị từ chối",
+    "description": "Bạn không có quyền truy cập trang này."
+  },
+  "user": {
+    "title": "Người dùng",
+    "page_description": "(Quản lý người dùng)",
+    "create": "Tạo mới",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa bỏ",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "avatar": "Ảnh đại diện",
+    "username": "Tên người dùng",
+    "email": "Email",
+    "first_name": "Tên",
+    "last_name": "Họ",
+    "full_name": "Tên",
+    "roles": "Vai trò",
+    "status": {
+      "label": "Trạng thái",
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động",
+      "locked": "Khóa"
+    },
+    "actions": "Thao tác"
+  },
+  "role": {
+    "title": "Vai trò",
+    "page_description": "(Quản lý vai trò)",
+    "create": "Tạo mới",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa bỏ",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "name": "Tên",
+    "description": "Mô tả",
+    "created_at": "Ngày tạo",
+    "updated_at": "Ngày cập nhật",
+    "actions": "Thao tác"
+  },
+  "permission": {
+    "title": "Quyền",
+    "page_description": "(Quản lý quyền)",
+    "create": "Tạo mới",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa bỏ",
+    "search": "Tìm kiếm",
+    "search_placeholder": "Tìm kiếm quyền...",
+    "filter": "Lọc",
+    "name": "Tên",
+    "description": "Mô tả",
+    "created_at": "Ngày tạo",
+    "updated_at": "Ngày cập nhật",
+    "actions": "Thao tác",
+    "items_selected": "{count} mục đã chọn"
+  }
+}

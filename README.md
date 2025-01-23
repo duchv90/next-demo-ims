@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Identity Management System (Frontend)
+
+## Introduction
+
+The Identity Management System (IMS) provides functionalities to manage user identity information, authenticate users, and control access to resources within the application. This system enhances security and access control for organizations.
+
+## Description
+
+- **User Authentication**: Sign-up, login, and logout functionality.
+- **Role-Based Access Control (RBAC)**: Assign and manage user roles.
+- **Secure API Routes**: Protect sensitive endpoints with authentication middleware.
+- **Session Management**: Persistent sessions with token-based authentication.
+
+
+
+
+---
+
+## Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+- Node.js (>= 20.x)
+- npm or Yarn
+
+---
+
+
+
 
 ## Getting Started
 
-First, run the development server:
+### 1. **Clone Repository**:
+
+```bash
+$ git clone https://github.com/duchv90/next-demo-ims.git
+$ cd next-demo-ims
+```
+
+### 2. **Install Dependencies**:
+
+```bash
+$ npm install
+```
+# or
+```bash
+$ yarn install
+```
+
+### 3. **Configuration**:
+
+Create a .env file and configure the necessary environment variables.
+Example: .env.sample
+
+### 4. **Run the development server**:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```plaintext
+├── app/             # App Router
+│   ├── api/         # API routes
+├── components/      # Reusable UI components
+├── lib/             # Utility functions or libraries
+├── public/          # Static assets
+├── styles/          # Global styles
+├── hooks/           # Custom React hooks
+├── services/        # API service calls
+├── types/           # TypeScript definitions
+├── locales/         # Localization
+├── utils/           # Utility functions
+├── next.config.js   # Next.js configuration
+├── package.json     # Project dependencies and scripts
+├── tsconfig.json    # TypeScript configuration
+├── .gitignore       # Git ignore file
+└── .env             # Environment variables
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- **`npm run dev`**: Start the development server.
+- **`npm run build`**: Build the application for production.
+- **`npm start`**: Start the production server.
+- **`npm run lint`**: Lint the code for errors.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. **Build the application**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+### 2. **Start the production server**:
+
+```bash
+npm start
+```
+
+### 3. Deployment
+
+Deploy to a hosting provider (e.g., [Vercel](https://vercel.com/)).
+
+## Stay in touch
+
+- Author - [Hoàng Việt Đức](https://hvduc.com)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

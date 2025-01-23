@@ -1,0 +1,8 @@
+@use "components/tailwind";
+@use "variables" as *;
+@use "components/antdesign";
+
+body {
+  color: var(--body-color);
+  background-color: var(--body-bg);
+}
