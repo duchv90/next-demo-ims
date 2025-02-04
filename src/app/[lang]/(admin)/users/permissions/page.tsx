@@ -1,9 +1,9 @@
 import { getTranslations } from 'next-intl/server';
 import { SearchParams } from '@/types';
 import MainContent from '@/components/layout/MainContent';
-import PermissionList from '@/components/user/PermissionList';
+import PermissionList from '@/components/user/permissions/PermissionList';
 import { DEFAULT_PAGE_SIZE } from '@/constants';
-import { UserPermission } from '@/constants/user';
+import { UserPermission } from '@/enums/user';
 
 export async function generateMetadata() {
   const t = await getTranslations();

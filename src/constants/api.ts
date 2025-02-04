@@ -8,6 +8,10 @@ export const API = {
   GET_USERS: `${API_URL}/users`,
   GET_ROLES: `${API_URL}/roles`,
   GET_PERMISSIONS: `${API_URL}/permissions`,
+  GET_PERMISSION: `${API_URL}/permissions`,
+  CREATE_PERMISSION: `${API_URL}/permissions`,
+  UPDATE_PERMISSION: `${API_URL}/permissions`,
+  DELETE_PERMISSION: `${API_URL}/permissions`,
   REFRESH_ACCESS_TOKEN: `${API_URL}/auth/refresh-token`,
 };
 

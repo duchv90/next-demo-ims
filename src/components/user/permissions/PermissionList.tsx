@@ -12,9 +12,11 @@ import {
 } from '@/types/permissions';
 import { formatDateTime } from '@/utils/stringHelpers';
 import SearchDataTable from '@/components/ui/SearchDataTable';
+import AddedMessage from '@/components/ui/AddedMessage';
+import Delete from '@/components/user/permissions/Delete';
 import { getPermissions } from '@/services/api';
 import { useRouter } from '@/i18n/routing';
-import { DEFAULT_PAGE_SIZE, Urls } from '@/constants';
+import { DEFAULT_PAGE_SIZE, SESSIONS, Urls } from '@/constants';
 
 export default function PermissionList({
   page,
@@ -80,15 +82,21 @@ export default function PermissionList({
     },
     {
       title: t('permission.actions'),
-      dataIndex: '',
+      dataIndex: 'id',
       key: 'delete',
       width: 180,
-      render: () => (
-        <div className="flex gap-3">
-          <a>{t('permission.edit')}</a>
-          <a>{t('role.delete')}</a>
-        </div>
-      ),
+      render: (value, record, index) => {
+        const updateURL = `${Urls.editPermissions}/${value}`;
+        const onClick = () => router.push(updateURL);
+        return (
+          <div className="flex gap-3" data-value={value} data-index={index}>
+            <Button type="link" onClick={onClick}>
+              {t('permission.edit')}
+            </Button>
+            <Delete id={record.id} name={record.name} />
+          </div>
+        );
+      },
     },
   ];
 
@@ -115,17 +123,22 @@ export default function PermissionList({
   useEffect(() => {
     const fetchPermissions = async () => {
       setLoading(true);
-      const params: Record<string, number> = {};
-      if (tableParams.pagination) {
-        if (tableParams.pagination.current)
-          params.page = tableParams.pagination.current;
-        if (tableParams.pagination.pageSize)
-          params.pageSize = tableParams.pagination.pageSize;
+      try {
+        const params: Record<string, number> = {};
+        if (tableParams.pagination) {
+          if (tableParams.pagination.current)
+            params.page = tableParams.pagination.current;
+          if (tableParams.pagination.pageSize)
+            params.pageSize = tableParams.pagination.pageSize;
+        }
+        const response = await getPermissions(params);
+        setRoles(response?.permissions || []);
+        setTotal(response?.total || 0);
+      } catch (error) {
+        console.error('Failed to fetch permissions:', error);
+      } finally {
+        setLoading(false);
       }
-      const response = await getPermissions(params);
-      setRoles(response?.permissions || []);
-      setTotal(response?.total || 0);
-      setLoading(false);
     };
     fetchPermissions();
   }, [tableParams]);
@@ -151,6 +164,7 @@ export default function PermissionList({
         </div>
       </div>
       <div className="rounded-sm bg-white p-3 shadow-dashboard">
+        <AddedMessage name={SESSIONS.PERMISSION_CREATE_SUCCESS} />
         <div className="flex justify-between p-3">
           <div className="flex items-center gap-2 whitespace-nowrap font-medium">
             {selectedRowKeys.length > 0 && (

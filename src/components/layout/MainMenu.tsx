@@ -7,12 +7,17 @@ import AntdIcon from '@/components/common/AntdIcon';
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
 import type { MainMenu, MenuItem } from '@/types/menu';
+import { useParams } from 'next/navigation';
 
 export default function MainMenu() {
   const { collapsed } = useAdminLayout();
   const currentLocale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
+  let pathname = usePathname();
+  const params = useParams();
+  if (params.id) {
+    pathname = pathname.replace(`/${params.id}`, '');
+  }
 
   const findActiveMenuItemWithParents = (
     menu: MenuItem[],

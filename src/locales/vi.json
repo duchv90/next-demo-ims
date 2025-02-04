@@ -63,7 +63,11 @@
   "common": {
     "item_unit": "mục",
     "items_unit": "mục",
-    "not_found_content": "Không tìm thấy dữ liệu"
+    "not_found_content": "Không tìm thấy dữ liệu",
+    "ok_button": "Xác nhận",
+    "cancel_button": "Hủy bỏ",
+    "delete_confirm_title": "Xác nhận xóa",
+    "delete_error_title": "Không thể xóa quyền"
   },
   "time": {
     "default": "vừa xong",
@@ -132,6 +136,44 @@
     "unread": "{ count } Chưa đọc",
     "view_all": "Xem thêm thông báo"
   },
+  "form": {
+    "required": "Trường này không được để trống",
+    "invalid_email": "Địa chỉ email không hợp lệ",
+    "invalid_url": "URL không hợp lệ",
+    "invalid_number": "Số không hợp lệ",
+    "invalid_date": "Ngày tháng không hợp lệ",
+    "invalid_password": "Mật khẩu phải chứa ít nhất 6 ký tự",
+    "invalid_password_confirm": "Mật khẩu không khớp",
+    "invalid_phone": "Số điện thoại không hợp lệ",
+    "invalid_credit_card": "Số thẻ tín dụng không hợp lệ",
+    "invalid_alpha": "Chỉ chứa ký tự chữ cái",
+    "invalid_alpha_numeric": "Only alphanumeric characters are allowed",
+    "invalid_alpha_dash": "Only alphanumeric characters, dashes, and underscores are allowed",
+    "invalid_numeric": "Only numeric characters are allowed",
+    "invalid_integer": "Only integer numbers are allowed",
+    "invalid_same": "The {attribute} and {other} must match",
+    "invalid_size": "The {attribute} must be {size}",
+    "invalid_min": "The {attribute} must be at least {min}",
+    "invalid_max": "The {attribute} may not be greater than {max}",
+    "invalid_between": "The {attribute} must be between :min and {max}",
+    "invalid_file": "The {attribute} must be a file",
+    "invalid_image": "The {attribute} must be an image",
+    "invalid_mimes": "The {attribute} must be a file of type: {values}",
+    "invalid_mime": "The {attribute} must be a file of type: {value}",
+    "invalid_dimensions": "The {attribute} has invalid image dimensions",
+    "invalid_distinct": "The {attribute} field has a duplicate value",
+    "invalid_in": "The selected {attribute} is invalid",
+    "invalid_not_in": "The selected {attribute} is invalid",
+    "invalid_accepted": "The {attribute} must be accepted",
+    "invalid_date_format": "The {attribute} does not match the format {format}",
+    "invalid_ip": "The {attribute} must be a valid IP address",
+    "invalid_ipv4": "The {attribute} must be a valid IPv4 address",
+    "invalid_ipv6": "The {attribute} must be a valid IPv6 address",
+    "invalid_json": "The {attribute} must be a valid JSON string",
+    "invalid_regex": "The {attribute} format is invalid",
+    "invalid_custom": "The {attribute} is invalid",
+    "invalid_attributes": {}
+  },
   "dashboard": {
     "vs": "VS",
     "view_more": "Xem thêm",
@@ -174,7 +216,7 @@
     "filter": "Lọc",
     "name": "Tên",
     "name_placeholder": "Nhập tên vai trò (ví dụ: Admin, User)",
-    "name_subtext": "Vai trò có thể bao gồm SuperAdmin, Admin, User và nhiều hơn nữa. Hãy chọn một cách khôn ngoan!",
+    "name_subtext": "Vai trò có thể bao gồm SuperAdmin, Admin, User và nhiều hơn nữa.",
     "description": "Mô tả",
     "description_placeholder": "Nhập mô tả vai trò...",
     "description_subtext": "Mô tả chi tiết về vai trò này.",
@@ -191,12 +233,13 @@
     "create": "Tạo mới",
     "edit": "Chỉnh sửa",
     "delete": "Xóa bỏ",
+    "delete_confirm": "Bạn có chắc chắn muốn xóa quyền \"{name}\" này?",
     "search": "Tìm kiếm",
     "search_placeholder": "Tìm kiếm quyền...",
     "filter": "Lọc",
     "name": "Tên",
     "name_placeholder": "Nhập tên quyền (ví dụ: add_users, edit_roles, delete_permissions)",
-    "name_subtext": "Quyền có thể bao gồm add_users, edit_roles, delete_permissions và nhiều hơn nữa. Hãy chọn một cách khôn ngoan!",
+    "name_subtext": "Quyền có thể bao gồm add_users, edit_roles, delete_permissions và nhiều hơn nữa.",
     "description": "Mô tả",
     "description_placeholder": "Nhập mô tả quyền...",
     "description_subtext": "Mô tả chi tiết về quyền này.",
@@ -206,10 +249,13 @@
     "items_selected": "{count} mục đã chọn",
     "save": "Lưu",
     "new_permission": "Thêm mới quyền",
+    "update_permission": "Cập nhật quyền",
+    "update_permission_success": "Quyền đã được cập nhật thành công.",
     "transfer": {
       "title": "Gán quyền cho vai trò",
       "description": "Chọn quyền mà bạn muốn gán cho vai trò này.",
       "search_placeholder": "Tìm kiếm quyền"
-    }
+    },
+    "create_success": "Quyền đã được tạo thành công."
   }
 }

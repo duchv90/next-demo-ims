@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { Urls } from '@/constants';
-import { UserPermission, UserRole } from '@/constants/user';
+import { UserPermission, UserRole } from '@/enums/user';
 import { useUser } from '@/context/UserContext';
 import { redirect } from '@/i18n/routing';
 

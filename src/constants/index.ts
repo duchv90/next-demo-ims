@@ -11,6 +11,7 @@ export const Urls = {
   newRoles: '/users/roles/new',
   permissions: '/users/permissions',
   newPermissions: '/users/permissions/new',
+  editPermissions: '/users/permissions/edit',
   emailSettings: '/settings/email',
   logSettings: '/settings/logs',
   preferences: '/settings/preferences',
@@ -25,6 +26,10 @@ export const COOKIES = {
     process.env.NODE_ENV === 'production'
       ? 'hvduc_rt_73de272367659fb1179945c9e6c7987d'
       : 'dev_refresh_token',
+};
+
+export const SESSIONS = {
+  PERMISSION_CREATE_SUCCESS: 'new_permission_added_successfully',
 };
 
 export const DATE_FORMAT: Intl.DateTimeFormatOptions = {

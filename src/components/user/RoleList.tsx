@@ -109,17 +109,22 @@ export default function RoleList({
   useEffect(() => {
     const fetchRoles = async () => {
       setLoading(true);
-      const params: Record<string, number> = {};
-      if (tableParams.pagination) {
-        if (tableParams.pagination.current)
-          params.page = tableParams.pagination.current;
-        if (tableParams.pagination.pageSize)
-          params.pageSize = tableParams.pagination.pageSize;
+      try {
+        const params: Record<string, number> = {};
+        if (tableParams.pagination) {
+          if (tableParams.pagination.current)
+            params.page = tableParams.pagination.current;
+          if (tableParams.pagination.pageSize)
+            params.pageSize = tableParams.pagination.pageSize;
+        }
+        const response = await getRoles(params);
+        setRoles(response?.roles || []);
+        setTotal(response?.total || 0);
+      } catch (error) {
+        console.error('Failed to fetch roles:', error);
+      } finally {
+        setLoading(false);
       }
-      const response = await getRoles(params);
-      setRoles(response?.roles || []);
-      setTotal(response?.total || 0);
-      setLoading(false);
     };
     fetchRoles();
   }, [tableParams]);

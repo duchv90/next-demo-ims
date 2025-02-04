@@ -3,7 +3,7 @@ import { getUsers } from '@/services/users';
 import { decrypt } from '@/lib/session';
 import { convertToString } from '@/utils/stringHelpers';
 import { COOKIES, DEFAULT_PAGE_SIZE } from '@/constants';
-import { UserStatus } from '@/constants/user';
+import { UserStatus } from '@/enums/user';
 import { PaginatedUsers, User, UserDataTable } from '@/types/users';
 
 export async function GET(req: NextRequest) {

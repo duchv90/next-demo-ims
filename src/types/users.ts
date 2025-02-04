@@ -1,4 +1,4 @@
-import { UserStatus } from '@/constants/user';
+import { UserStatus } from '@/enums/user';
 import { ApiResponse } from '@/types/api';
 
 export interface User {
@@ -35,7 +35,7 @@ export interface UserInfo {
 }
 
 export interface UserProfileCompact {
-  id: number;
+  id: string;
   firstName: string;
   lastName?: string;
   avatar?: string | null;

@@ -40,3 +40,8 @@ export interface PermissionsTransferProps
   leftColumns: TableColumnsType<PermissionDataTable>;
   rightColumns: TableColumnsType<PermissionDataTable>;
 }
+
+export interface PermissionFormValues {
+  name: string;
+  description?: string;
+}

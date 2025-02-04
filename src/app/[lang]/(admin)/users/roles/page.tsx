@@ -3,7 +3,7 @@ import MainContent from '@/components/layout/MainContent';
 import RoleList from '@/components/user/RoleList';
 import { SearchParams } from '@/types';
 import { DEFAULT_PAGE_SIZE } from '@/constants';
-import { UserPermission } from '@/constants/user';
+import { UserPermission } from '@/enums/user';
 
 export async function generateMetadata() {
   const t = await getTranslations();

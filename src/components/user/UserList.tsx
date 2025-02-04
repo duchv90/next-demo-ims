@@ -20,7 +20,7 @@ import UserAvatar from '@/components/user/UserAvatar';
 import { PaginatedUsers, UserDataTable, UserTableParams } from '@/types/users';
 import { getUsers } from '@/services/api';
 import type { TableRowSelection } from 'antd/es/table/interface';
-import { UserStatus } from '@/constants/user';
+import { UserStatus } from '@/enums/user';
 
 export default function UserList({
   page,
@@ -156,17 +156,22 @@ export default function UserList({
   useEffect(() => {
     const fetchUsers = async () => {
       setLoading(true);
-      const params: Record<string, number> = {};
-      if (tableParams.pagination) {
-        if (tableParams.pagination.current)
-          params.page = tableParams.pagination.current;
-        if (tableParams.pagination.pageSize)
-          params.pageSize = tableParams.pagination.pageSize;
+      try {
+        const params: Record<string, number> = {};
+        if (tableParams.pagination) {
+          if (tableParams.pagination.current)
+            params.page = tableParams.pagination.current;
+          if (tableParams.pagination.pageSize)
+            params.pageSize = tableParams.pagination.pageSize;
+        }
+        const response = await getUsers(params);
+        setUsers(response?.users || []);
+        setTotal(response?.total || 0);
+      } catch (error) {
+        console.error('Failed to fetch users:', error);
+      } finally {
+        setLoading(false);
       }
-      const response = await getUsers(params);
-      setUsers(response?.users || []);
-      setTotal(response?.total || 0);
-      setLoading(false);
     };
 
     fetchUsers();
