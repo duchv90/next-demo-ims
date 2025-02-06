@@ -1,29 +1,29 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { Button, Card, Empty, Flex, Form, Input } from 'antd';
 import { useTranslations } from 'next-intl';
-import { Permission, PermissionFormValues } from '@/types/permissions';
-import { Link } from '@/i18n/routing';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Urls } from '@/constants';
-import { handleUpdatePermission } from '@/app/actions/permisstions';
+import { Link } from '@/i18n/routing';
+import { RoleFormValues, RoleInfo } from '@/types/roles';
+import { handleUpdateRole } from '@/app/actions/roles';
 import MessageAlert from '@/components/ui/MessageAlert';
+import { Urls } from '@/constants';
+import RolePermissions from '../user/RolePermissions';
 
 const initialMessage = {
   status: false,
   message: '',
 };
 
-export default function UpdatePermissionForm({
-  permission,
-}: {
-  permission: Permission | null;
-}) {
+export default function UpdateRoleForm({ data }: { data: RoleInfo | null }) {
   const t = useTranslations();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(initialMessage);
   const [success, setSuccess] = useState(initialMessage);
+  const [permissions, setPermissions] = useState<string[]>(
+    data && data.permissionIds ? data.permissionIds : [],
+  );
 
   const validateMessages = {
     required: t('form.required'),
@@ -33,22 +33,29 @@ export default function UpdatePermissionForm({
     },
   };
 
+  const updatePermissions = (newPermissions: string[]) => {
+    setPermissions(newPermissions);
+  };
+
   const onFinish = useCallback(
-    async (values: PermissionFormValues) => {
+    async (values: RoleFormValues) => {
       setLoading(true);
       setError(initialMessage);
       setSuccess(initialMessage);
 
-      if (permission) {
-        const data = await handleUpdatePermission(permission.id, values);
+      if (data) {
+        const response = await handleUpdateRole(data.id, values, permissions);
 
-        if (data) {
-          if (data.error) {
-            setError({ status: data.error, message: data.message || '' });
+        if (response) {
+          if (response.error) {
+            setError({
+              status: response.error,
+              message: response.message || '',
+            });
           } else {
             setSuccess({
               status: true,
-              message: t('permission.update_permission_success'),
+              message: t('role.update_role_success'),
             });
           }
         } else {
@@ -62,7 +69,7 @@ export default function UpdatePermissionForm({
       setLoading(false);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [permission],
+    [data, permissions],
   );
 
   return (
@@ -73,19 +80,17 @@ export default function UpdatePermissionForm({
       autoComplete="off"
       validateMessages={validateMessages}
       onFinish={onFinish}
-      initialValues={permission || {}}
+      initialValues={data || {}}
     >
       <div className="mb-5 flex items-end justify-between py-3">
         <div className="flex items-center">
           <Link
             className="mr-3 flex items-center text-body hover:text-primary"
-            href={Urls.permissions}
+            href={Urls.roles}
           >
             <ArrowLeftOutlined style={{ fontSize: 20 }} />
           </Link>
-          <h1 className="text-2xl font-bold">
-            {t('permission.update_permission')}
-          </h1>
+          <h1 className="text-2xl font-bold">{t('role.update_role')}</h1>
         </div>
         <div className="flex items-center">
           <Button
@@ -94,13 +99,11 @@ export default function UpdatePermissionForm({
             htmlType="submit"
             loading={loading}
           >
-            <span className="font-semibold uppercase">
-              {t('permission.save')}
-            </span>
+            <span className="font-semibold uppercase">{t('role.save')}</span>
           </Button>
         </div>
       </div>
-      {permission ? (
+      {data ? (
         <div className="scrollbar-thumb-primary-500 scrollbar-track-primary-200 max-h-[calc(100%-86px)] flex-grow overflow-y-auto scrollbar-thin">
           <Flex gap="large" align="start" vertical>
             {error.status && (
@@ -114,30 +117,36 @@ export default function UpdatePermissionForm({
                 name="name"
                 label={
                   <span className="font-semibold text-body">
-                    {t('permission.name')}
+                    {t('role.name')}
                   </span>
                 }
                 rules={[{ required: true }]}
                 wrapperCol={{ span: 12 }}
-                extra={t('permission.name_subtext')}
+                extra={t('role.name_subtext')}
               >
-                <Input placeholder={t('permission.name_placeholder')} />
+                <Input placeholder={t('role.name_placeholder')} />
               </Form.Item>
               <Form.Item
                 name="description"
                 label={
                   <span className="font-semibold text-body">
-                    {t('permission.description')}
+                    {t('role.description')}
                   </span>
                 }
-                extra={t('permission.description_subtext')}
+                extra={t('role.description_subtext')}
                 style={{ marginBottom: 0 }}
               >
                 <Input.TextArea
                   rows={4}
-                  placeholder={t('permission.description_placeholder')}
+                  placeholder={t('role.description_placeholder')}
                 />
               </Form.Item>
+            </Card>
+            <Card className="w-full shadow-dashboard">
+              <RolePermissions
+                permissionIds={permissions}
+                updatePermissions={updatePermissions}
+              />
             </Card>
           </Flex>
         </div>

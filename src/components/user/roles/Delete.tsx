@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button, notification, Popconfirm } from 'antd';
 import { useTranslations } from 'next-intl';
-import { handleDeletePermission } from '@/app/actions/permisstions';
+import { handleDeleteRole } from '@/app/actions/roles';
 
 export default function Delete({ id, name }: { id: string; name: string }) {
   const t = useTranslations();
@@ -20,33 +20,23 @@ export default function Delete({ id, name }: { id: string; name: string }) {
     });
   };
 
-  const showPopconfirm = () => {
-    setOpen(true);
-  };
-
   const handleOk = async () => {
     setConfirmLoading(true);
 
-    const data = await handleDeletePermission(id);
+    try {
+      const data = await handleDeleteRole(id);
 
-    if (data) {
-      if (data.error) {
+      if (data?.error) {
         handleNotification(data.message || '');
         return;
       }
-    } else {
+
+      setConfirmLoading(false);
+      setOpen(false);
+      window.location.reload();
+    } catch {
       handleNotification(t('common.messages.server_error'));
-      return;
     }
-
-    setConfirmLoading(false);
-    setOpen(false);
-
-    window.location.reload();
-  };
-
-  const handleCancel = () => {
-    setOpen(false);
   };
 
   return (
@@ -54,16 +44,16 @@ export default function Delete({ id, name }: { id: string; name: string }) {
       {contextHolder}
       <Popconfirm
         title={t('common.delete_confirm_title')}
-        description={t('permission.delete_confirm', { name })}
+        description={t('role.delete_confirm', { name })}
         open={open}
         onConfirm={handleOk}
         okButtonProps={{ loading: confirmLoading }}
-        onCancel={handleCancel}
+        onCancel={() => setOpen(false)}
         placement="left"
         okText={t('common.ok_button')}
         cancelText={t('common.cancel_button')}
       >
-        <Button type="link" onClick={showPopconfirm}>
+        <Button type="link" onClick={() => setOpen(true)}>
           {t('form.button_label.delete')}
         </Button>
       </Popconfirm>

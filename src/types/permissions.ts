@@ -16,6 +16,14 @@ export interface PermissionInfo {
   updatedAt?: string;
 }
 
+export interface RolePermission {
+  id: string;
+  roleId: string;
+  permissionId: string;
+  permissionName: string;
+  permissionDescription?: string;
+}
+
 export interface PermissionDataTable extends PermissionInfo {
   key: string;
 }

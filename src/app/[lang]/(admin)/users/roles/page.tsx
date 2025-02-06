@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import MainContent from '@/components/layout/MainContent';
-import RoleList from '@/components/user/RoleList';
+import RoleList from '@/components/user/roles/RoleList';
 import { SearchParams } from '@/types';
 import { DEFAULT_PAGE_SIZE } from '@/constants';
 import { UserPermission } from '@/enums/user';

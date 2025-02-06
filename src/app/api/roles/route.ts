@@ -45,6 +45,7 @@ export async function GET(req: NextRequest) {
               description: role.description || '',
               createdAt: role.created,
               updatedAt: role.updated,
+              permissionIds: [],
             }),
           );
           paginatedRoles.total = rolesData.total;

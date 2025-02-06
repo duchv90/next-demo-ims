@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import MainContent from '@/components/layout/MainContent';
-import NewRole from '@/components/user/NewRole';
+import NewRoleForm from '@/components/form/NewRoleForm';
 import { UserPermission } from '@/enums/user';
 
 export async function generateMetadata() {
@@ -16,7 +16,7 @@ export async function generateMetadata() {
 export default function NewRolePage() {
   return (
     <MainContent role={UserPermission.CreateRole}>
-      <NewRole />
+      <NewRoleForm />
     </MainContent>
   );
 }

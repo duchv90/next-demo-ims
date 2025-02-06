@@ -74,7 +74,7 @@ export const MAIN_MENU: MenuItem[] = [
       {
         id: 'b5ad7444-8fbc-48ec-9e5e-8b99306dbd3f',
         href: Urls.roles,
-        pathnames: [Urls.roles, Urls.newRoles],
+        pathnames: [Urls.roles, Urls.newRoles, Urls.editRoles],
         icon: '',
         label: {
           vi: 'Vai trò',

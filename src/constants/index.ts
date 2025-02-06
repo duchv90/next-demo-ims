@@ -9,6 +9,7 @@ export const Urls = {
   users: '/users',
   roles: '/users/roles',
   newRoles: '/users/roles/new',
+  editRoles: '/users/roles/edit',
   permissions: '/users/permissions',
   newPermissions: '/users/permissions/new',
   editPermissions: '/users/permissions/edit',
@@ -30,6 +31,7 @@ export const COOKIES = {
 
 export const SESSIONS = {
   PERMISSION_CREATE_SUCCESS: 'new_permission_added_successfully',
+  ROLE_CREATE_SUCCESS: 'new_role_added_successfully',
 };
 
 export const DATE_FORMAT: Intl.DateTimeFormatOptions = {

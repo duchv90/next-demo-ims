@@ -91,7 +91,7 @@ export default function PermissionList({
         return (
           <div className="flex gap-3" data-value={value} data-index={index}>
             <Button type="link" onClick={onClick}>
-              {t('permission.edit')}
+              {t('form.button_label.edit')}
             </Button>
             <Delete id={record.id} name={record.name} />
           </div>

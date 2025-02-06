@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Flex, TableColumnsType, TransferProps } from 'antd';
 import {
@@ -11,9 +10,14 @@ import useFetch from '@/hooks/useFetch';
 import { parseParamsToURL } from '@/utils/stringHelpers';
 import { API_INTERNAL } from '@/constants/api';
 
-export default function RolePermissions() {
+export default function RolePermissions({
+  permissionIds,
+  updatePermissions,
+}: Readonly<{
+  permissionIds: string[];
+  updatePermissions: (newPermissions: string[]) => void;
+}>) {
   const t = useTranslations();
-  const [targetKeys, setTargetKeys] = useState<TransferProps['targetKeys']>([]);
 
   const params = {
     page: '1',
@@ -47,8 +51,12 @@ export default function RolePermissions() {
   const filterOption = (input: string, item: PermissionDataTable) =>
     item.name?.includes(input) || item.description?.includes(input) || false;
 
-  const onChange: PermissionsTransferProps['onChange'] = (nextTargetKeys) => {
-    setTargetKeys(nextTargetKeys);
+  const onChange: PermissionsTransferProps['onChange'] = (
+    nextTargetKeys: TransferProps['targetKeys'],
+  ) => {
+    if (nextTargetKeys) {
+      updatePermissions(nextTargetKeys as string[]);
+    }
   };
 
   return (
@@ -61,7 +69,7 @@ export default function RolePermissions() {
       </div>
       <RolePermissionsTransfer
         dataSource={permissions}
-        targetKeys={targetKeys}
+        targetKeys={permissionIds}
         showSearch
         showSelectAll={false}
         onChange={onChange}

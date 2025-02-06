@@ -12,6 +12,7 @@ export interface RoleInfo {
   description: string;
   createdAt: string;
   updatedAt: string;
+  permissionIds?: string[];
 }
 
 export interface RoleDataTable extends RoleInfo {
@@ -30,4 +31,9 @@ export interface PaginatedRoles {
   total: number;
   page: number;
   pageSize: number;
+}
+
+export interface RoleFormValues {
+  name: string;
+  description?: string;
 }

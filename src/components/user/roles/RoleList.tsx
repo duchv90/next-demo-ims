@@ -4,13 +4,15 @@ import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Button, GetProp, Table, TableColumnsType, TableProps } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import { PaginatedRoles, RoleDataTable, RoleTableParams } from '@/types/roles';
 import { TableRowSelection } from 'antd/es/table/interface';
+import { PaginatedRoles, RoleDataTable, RoleTableParams } from '@/types/roles';
 import { formatDateTime } from '@/utils/stringHelpers';
 import { getRoles } from '@/services/api';
 import { useRouter } from '@/i18n/routing';
-import { Urls } from '@/constants';
 import SearchDataTable from '@/components/ui/SearchDataTable';
+import AddedMessage from '@/components/ui/AddedMessage';
+import Delete from '@/components/user/roles/Delete';
+import { SESSIONS, Urls } from '@/constants';
 
 export default function RoleList({
   page,
@@ -74,15 +76,21 @@ export default function RoleList({
     },
     {
       title: t('role.actions'),
-      dataIndex: '',
+      dataIndex: 'id',
       key: 'delete',
       width: 180,
-      render: () => (
-        <div className="flex gap-3">
-          <a>{t('role.edit')}</a>
-          <a>{t('role.delete')}</a>
-        </div>
-      ),
+      render: (value, record, index) => {
+        const updateURL = `${Urls.editRoles}/${value}`;
+        const onClick = () => router.push(updateURL);
+        return (
+          <div className="flex gap-3" data-value={value} data-index={index}>
+            <Button type="link" onClick={onClick}>
+              {t('form.button_label.edit')}
+            </Button>
+            <Delete id={record.id} name={record.name} />
+          </div>
+        );
+      },
     },
   ];
 
@@ -150,6 +158,7 @@ export default function RoleList({
         </div>
       </div>
       <div className="rounded-sm bg-white p-3 shadow-dashboard">
+        <AddedMessage name={SESSIONS.ROLE_CREATE_SUCCESS} />
         <div className="flex justify-between p-3">
           <div className="flex items-center gap-2 whitespace-nowrap font-medium">
             {selectedRowKeys.length > 0 && (

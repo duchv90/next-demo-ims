@@ -67,7 +67,10 @@
     "ok_button": "Xác nhận",
     "cancel_button": "Hủy bỏ",
     "delete_confirm_title": "Xác nhận xóa",
-    "delete_error_title": "Không thể xóa quyền"
+    "delete_error_title": "Không thể xóa quyền",
+    "messages": {
+      "server_error": "Không thể kết nối đến máy chủ. Vui lòng thử lại sau."
+    }
   },
   "time": {
     "default": "vừa xong",
@@ -172,7 +175,14 @@
     "invalid_json": "The {attribute} must be a valid JSON string",
     "invalid_regex": "The {attribute} format is invalid",
     "invalid_custom": "The {attribute} is invalid",
-    "invalid_attributes": {}
+    "invalid_attributes": {},
+    "button_label": {
+      "submit": "Gửi",
+      "save": "Lưu",
+      "update": "Cập nhật",
+      "delete": "Xóa bỏ",
+      "edit": "Chỉnh sửa"
+    }
   },
   "dashboard": {
     "vs": "VS",
@@ -212,6 +222,7 @@
     "create": "Tạo mới",
     "edit": "Chỉnh sửa",
     "delete": "Xóa bỏ",
+    "delete_confirm": "Bạn có chắc chắn muốn xóa vai trò \"{name}\" này?",
     "search": "Tìm kiếm",
     "filter": "Lọc",
     "name": "Tên",
@@ -225,7 +236,10 @@
     "actions": "Thao tác",
     "items_selected": "{count} mục đã chọn",
     "save": "Lưu",
-    "new_role": "Thêm mới vai trò"
+    "new_role": "Thêm mới vai trò",
+    "create_success": "Vai trò đã được tạo thành công.",
+    "update_role": "Cập nhật vai trò",
+    "update_role_success": "Vai trò đã được cập nhật thành công."
   },
   "permission": {
     "title": "Quyền",
